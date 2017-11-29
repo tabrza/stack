@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/oleg/projects/stack/spec/features/app_spec.rb": [
+      "/Users/tabishraza/Projects/stack/spec/features/app_spec.rb": [
         1,
         1,
         1,
@@ -27,16 +27,16 @@
         null,
         null
       ],
-      "/Users/oleg/projects/stack/spec/features/signin_spec.rb": [
+      "/Users/tabishraza/Projects/stack/spec/features/signin_spec.rb": [
         1,
         1,
         1,
         1,
-        0,
+        1,
         null,
         null
       ]
     },
-    "timestamp": 1511946149
+    "timestamp": 1511947421
   }
 }
