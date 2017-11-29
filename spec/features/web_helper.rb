@@ -29,3 +29,10 @@ def post_a_peep
   visit('/peeps')
   fill_in('new_peep', with: 'Hello World')
 end
+
+def sign_in(email, password)
+  visit('/')
+  fill_in('email', with: email)
+  fill_in('password', with: password)
+  click_button 'Submit'
+end

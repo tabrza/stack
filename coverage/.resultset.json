@@ -1,0 +1,42 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/oleg/projects/stack/spec/features/app_spec.rb": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        null,
+        null
+      ],
+      "/Users/oleg/projects/stack/spec/features/signin_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1511946149
+  }
+}
