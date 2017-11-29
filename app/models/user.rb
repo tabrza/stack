@@ -1,6 +1,6 @@
-require 'data_mapper'
+# require 'data_mapper'
 require 'bcrypt'
-require 'dm-validations'
+# require 'dm-validations'
 
 class User
   include DataMapper::Resource
@@ -9,10 +9,12 @@ class User
   property :email, String
   property :username, String
   property :password_digest, Text
-  has n,   :peeps
 
   attr_reader :password
   attr_accessor :password_confirmation
+
+  has n,   :peeps
+
   validates_confirmation_of :password
   validates_format_of :email, as: :email_address
 
@@ -26,7 +28,7 @@ class User
     if user && BCrypt::Password.new(user.password_digest) == password
       user
     else
-      nilr
+      nil
     end
   end
 end
