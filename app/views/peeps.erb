@@ -1,62 +1,48 @@
 <html>
-<head>
-  <link rel='stylesheet' type='text/css' src='css/all_peeps.css'>
-</head>
-<body>
+  <head>
+    <link rel='stylesheet' type='text/css' src='css/all_peeps.css'>
+  </head>
+  <body>
 
+    <%if current_user %>
+      <h1>My profile</h1>
+        <p> Username: <%= current_user.username %></p>
+        <p> Email: <%= current_user.email %> </p>
+        <p>Number of peeps <%= current_user.peeps.count %></p>
+        <p>Recent peeps: <% current_user.peeps.reverse.each do |peep| %> </p>
+      <table class="redTable">
+        <thead>
+          <tr>
+          <th><%= peep.maker %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><%= peep.body %></td></tr>
+          <tr><td>Sent on: <%= peep.created_at.strftime('%c') %></td></tr>
+        </tbody>
+        </tr>
+      </table>
+    <%end%>
+      <form action='/peeps' method="post">
+          <input type='text' name='new_peep' placeholder="Your new peep...">
+        <input type='submit' value='Post'>
+      </form>
+    <%end%>
 
-<%if current_user %>
-<h1>My profile</h1>
-<p> Username: <%= current_user.username %></p>
-<p> Email: <%= current_user.email %> </p>
-<p>Number of peeps <%= current_user.peeps.count %></p>
-<p>Recent peeps: <% current_user.peeps.reverse.each do |peep| %> </p>
-<table class="redTable">
-<thead>
-<tr>
-<th><%= peep.maker %></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><%= peep.body %></td></tr>
-<tr>
-<td>Sent on: <%= peep.created_at.strftime('%c') %></td></tr>
-</tbody>
-</tr>
-</table>
-<%end%>
-<form action='/peeps' method="post">
-    <input type='text' name='new_peep' placeholder="Your new peep...">
-  <input type='submit' value='Post'>
-</form>
-<%end%>
+  <h1>All peeps</h1>
 
+    <% @peeps.reverse.each do |peep| %>
+      <table id="all-peeps" class="redTable">
+        <thead>
+          <tr><th><%= peep.maker %></th></tr>
+        </thead>
+          <tbody>
+            <tr><td><%= peep.body %></td></tr>
+            <tr><td>Sent on: <%= peep.created_at.strftime('%c') %></td></tr>
+          </tbody>
+        </tr>
+      </table>
+    <%end%>
 
-
-<h1>All peeps</h1>
-
-<% @peeps.reverse.each do |peep| %>
-<table id="all-peeps" class="redTable">
-<thead>
-<tr>
-<th><%= peep.maker %></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><%= peep.body %></td></tr>
-<tr>
-<td>Sent on: <%= peep.created_at.strftime('%c') %></td></tr>
-</tbody>
-</tr>
-</table>
-<%end%>
-
-
-
-
-
-
-</body>
+  </body>
 </html>
